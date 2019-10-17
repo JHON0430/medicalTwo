@@ -29,13 +29,13 @@ public class profesionalMedicoBD {
     public void agregarProfesionalBD(String registroMedico, String nombres,String apellidos, String especialidad,String cedula,String celular){
     
         String SQL="insert into profesionalMedico (registroMedico,nombres,apellidos,especialidad,cedula,celular) values (?,?,?,?,?,?)";
-        try {
+       try {
            PreparedStatement pst=con.prepareStatement(SQL);
-           pst.setString(1,registroMedico.getText());
-           pst.setString(2,nombres.getText());
-           pst.setString(3,apellidos.getText());           
-           pst.setInt(4,Integer.parseInt(cedula.getText()));
-           pst.setInt(5,Integer.parseInt(celular.getText()));
+           pst.setString(1,registroMedico);
+           pst.setString(2, nombres);
+           pst.setString(3,apellidos);           
+           pst.setInt(4,Integer.parseInt(cedula));
+           pst.setInt(5,Integer.parseInt(celular));
            
            
            pst.executeUpdate();
